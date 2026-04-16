@@ -1,0 +1,14 @@
+h2 Log in
+- if @error
+  p= @error
+form method="post" action="/login"
+  label Username 
+  br
+  input type="text" name="user"
+  br
+  label Password 
+  br
+  input type="password" name="pwd"
+  br
+  button type="submit" Log in
+

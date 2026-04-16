@@ -1,0 +1,21 @@
+main.game-page 
+    section.terminal-window
+        .terminal-topbar
+            .terminal-dot 
+            .terminal-dot 
+            .terminal-dot 
+            span Brutus.exe
+
+        .terminal-body#terminal-body
+            - if @terminal_output && !@terminal_output.empty?
+                - @terminal_output.each do |entry|
+                    p.terminal-line data-show-at=entry["show_at"] = entry["text"]
+            - else
+                p Type "help" for a list of commands.
+
+
+
+        form.command-form method="post" action="/command"
+            label.sr-only for="command" Command 
+            span.prompt PS C:\Brutus>
+            input#command type="text" name="command" autocomplete="true" autofocus="true"

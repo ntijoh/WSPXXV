@@ -1,0 +1,9 @@
+h2 Register
+- if @error
+  p= @error
+form method="post" action="/register"
+  
+  input type="text" name="user" placeholder="Username"
+  input type="password" name="pwd" placeholder="Password"
+  input type="password" name="pwd_confirm" placeholder="Confirm Password"
+  button type="submit" Create Account

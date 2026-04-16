@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+html lang="en"
+  head
+    meta charset="UTF-8"/
+    meta name="viewport" content="width=device-width, initial-scale=1.0"/
+    link rel="stylesheet" href="/style.css?#{Time.now.to_i}"/
+    title Brutus
+  body
+    header
+      h1 Brutus
+      nav
+        a href='/' Home
+        - if session[:user_id]
+          a href='/logout' Logout
+        - else
+          a href='/login' Login
+          a href='/register' Register
+
+        - if session[:user_id]
+          .account-box
+            p.account-user Logged in as: #{session[:username]}
+            form method="post" action="/delete_account"
+              button type="submit" onclick="return confirm('Delete your account and all saved data?')" Delete Account
+
+    == yield
+
+    javascript:
+      document.addEventListener('DOMContentLoaded', function () {
+        var terminal = document.getElementById('terminal-body');
+        if (!terminal) return;
+
+        var lines = terminal.querySelectorAll('.terminal-line');
+        var now = Date.now();
+
+        lines.forEach(function (line) {
+          var showAt = parseInt(line.dataset.showAt || now, 10);
+          var wait = Math.max(0, showAt - now);
+
+          if (wait > 0) {
+            line.style.visibility = 'hidden';
+            setTimeout(function () {
+              line.style.visibility = 'visible';
+              terminal.scrollTop = terminal.scrollHeight;
+            }, wait);
+          }
+        });
+
+        terminal.scrollTop = terminal.scrollHeight;
+
+        var input = document.getElementById('command');
+        if (input) input.focus();
+      });

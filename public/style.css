@@ -1,0 +1,182 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: sans-serif;
+  color: #111111;
+  background-color: #f1f1f1;
+  font-size: x-large;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-size: 16px;
+}
+
+header {
+  color: #111111;
+  background-color: lightcyan;
+  font-family: fantasy;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.4rem;
+  line-height: 1;
+  flex: 0 0 auto;
+}
+
+.title {
+  font-family: serif;
+  color: blanchedalmond;
+}
+
+header a {
+  color: #111111;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  padding: 0 12px;
+  border: 1px solid lightcyan;
+  background-color: lightcyan;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+p {
+  font-weight: bold;
+}
+
+nav a {
+  padding: 6px 10px;
+  font-size: 0.95rem;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+}
+
+.game-page {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  padding: 6px 12px 18px 12px;
+  box-sizing: border-box;
+}
+
+.terminal-window {
+  width: min(1100px, 94vw);
+  height: 100%;
+  max-height: 100%;
+  background: #0c0c0c;
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+  display: grid;
+  grid-template-rows: 44px 1fr auto;
+}
+
+.account-box form {
+  margin: 0;
+}
+
+.account-box {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.account-user {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+.account-box button {
+  font-size: 0.82rem;
+  padding: 2px 8px;
+  line-height: 1.1;
+}
+
+.terminal-topbar {
+  height: 44px;
+  background: #2d2d30;
+  color: #f1f1f1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 16px;
+  font-size: 0.95rem;
+  font-family: sans-serif;
+}
+
+.terminal-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #6e6e6e;
+}
+
+.terminal-body {
+  min-height: 0;
+  padding: 20px;
+  color: #f1f1f1;
+  font-family: Consolas, monospace;
+  font-size: 1.1rem;
+  overflow-y: auto;
+}
+
+.terminal-body p {
+  margin: 0 0 10px 0;
+  font-weight: normal;
+  color: #f1f1f1;
+}
+
+.command-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  padding: 12px 20px;
+  border-top: 1px solid #2a2a2a;
+  background: #0c0c0c;
+}
+
+.prompt {
+  color: #f1f1f1;
+  white-space: nowrap;
+}
+
+.command-form input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #f1f1f1;
+  font-family: Consolas, monospace;
+  font-size: 1.1rem;
+}
+
+.sr-only {
+  position: absolute;
+  left: -9999px;
+}
